@@ -89,7 +89,7 @@ class Todolist extends Component {
     render() {
 
         return (
-           <div>
+           <div className='container-fluid'>
                <div>
                 <div className="d-flex justify-content-center align-items-center container mt-5">
                 
@@ -99,7 +99,7 @@ class Todolist extends Component {
                 </div>
                     <form className='form-group' onSubmit={this.onSubmit} className='col-12'>
                         <input ref={input => this.task = input} value={this.state.input} onChange={this.onChange} placeholder='task' className='inputstyle' />
-                        <button className='btn btn-primary addBtn' onclick={this.onsubmit}>Submit</button>
+                        <button className='btn btn-success addBtn' onclick={this.onsubmit}>Submit</button>
                     </form>
 
                     <ul style={{ listStyleType: "none" }} className='col mt-3 mb-3'>

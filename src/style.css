@@ -25,15 +25,6 @@ ul {
     background: #ddd;
   }
 
-  .bground{
-    height: 100%;
-    margin: 0;
-  }
-
-  .bgimg{
-    background-image: url('./429926.jpg');
-  }
-
   /* Style the input */
 .inputstyle {
     margin: 0;
