@@ -25,14 +25,24 @@ ul {
     background: #ddd;
   }
 
+  .bground{
+    height: 100%;
+    margin: 0;
+  }
+
+  .bgimg{
+    background-image: url('./429926.jpg');
+  }
+
   /* Style the input */
 .inputstyle {
     margin: 0;
-    border-radius: 75;
+    border-radius: 15px;
     width: 75%;
     padding: 10px;
     float: left;
     font-size: 16px;
+    outline-width: 0;
   }
   
   /* Style the "Add" button */

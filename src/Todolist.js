@@ -59,19 +59,25 @@ class Todolist extends Component {
 
     rendertasks = () => {
 
-        let render = this.state.items.map((el, index) => {
-            if (el.completed === 0) {
+        let render = this.state.items.map((item, index) => {
+            if (item.completed === 0) {
                 return (
-                    <li key={index} style={{ background: 'green' }} className='mr-3'
-                        onClick={() => { this.onNotCompleted(index) }}
-                        onDoubleClick={() => { this.onDelete(index) }}>{el.tasks}
-                    </li>)
+                    <li className='list-group-item d-flex justify-content-between bg-success text-white'>
+                    <span key={index}>{item.tasks}</span>
+                    <span>
+                       <button className='btn btn-warning btn-sm mx-1' onClick={() => { this.onNotCompleted(index) }}>Undone</button>
+                       <button className='btn btn-danger btn-sm mx-1' onClick={() => { this.onDelete(index) }}>X</button>
+                    </span>
+                 </li>)
             }
-            if (el.completed === 1) {
+            if (item.completed === 1) {
                 return (
-                    <li key={index} className='mr-3'
-                    onClick={() => { this.onCompleted(index) }}
-                    onDoubleClick={() => {this.onDelete(index)}}>{el.tasks}
+                    <li className='list-group-item d-flex justify-content-between bg-dark text-white'>
+                    <span key={index}>{item.tasks}</span>
+                    <span>
+                       <button className='btn btn-success btn-sm mx-1' onClick={() => { this.onCompleted(index) }}>Done</button>
+                       <button className='btn btn-danger btn-sm mx-1' onClick={() => { this.onDelete(index) }}>X</button>
+                    </span>
                     </li>
                 )
             }
@@ -83,7 +89,9 @@ class Todolist extends Component {
     render() {
 
         return (
-            <div className="d-flex justify-content-center align-items-center container mt-5">
+           <div>
+               <div>
+                <div className="d-flex justify-content-center align-items-center container mt-5">
                 
                 <div className='row'>
                 <div className='row header col-12 justify-content-center align-self-cente'>
@@ -91,14 +99,16 @@ class Todolist extends Component {
                 </div>
                     <form className='form-group' onSubmit={this.onSubmit} className='col-12'>
                         <input ref={input => this.task = input} value={this.state.input} onChange={this.onChange} placeholder='task' className='inputstyle' />
-                        <button className='btn btn-primary addBtn'>Submit</button>
+                        <button className='btn btn-primary addBtn' onclick={this.onsubmit}>Submit</button>
                     </form>
 
-                    <ul style={{ listStyleType: "none" }} className='col mt-3'>
+                    <ul style={{ listStyleType: "none" }} className='col mt-3 mb-3'>
                         {this.rendertasks()}
                     </ul>
                 </div>
             </div>
+           </div>
+           </div>
         );
     }
 }
